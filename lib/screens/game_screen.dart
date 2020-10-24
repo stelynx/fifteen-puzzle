@@ -21,12 +21,6 @@ class GameScreen extends StatelessWidget {
     @required this.timePlaying,
   });
 
-  factory GameScreen.fromGameState(GameState state) => GameScreen(
-        board: state.board,
-        movesMade: state.maxMoves,
-        timePlaying: state.gameDuration,
-      );
-
   @override
   Widget build(BuildContext context) {
     if (Flags.enableBannerAds) {

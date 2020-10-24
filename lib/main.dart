@@ -28,7 +28,7 @@ class FifteenPuzzleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Fifteen Puzzle',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.dark,
+      theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       home: _Home(),
     );
