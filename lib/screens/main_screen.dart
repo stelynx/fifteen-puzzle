@@ -16,6 +16,7 @@ class MainScreen extends StatelessWidget {
             board: state.board,
             movesMade: state.movesMade,
             timePlaying: state.gameDuration,
+            refreshBannerAd: state.refreshBannerAd,
           );
         }
 

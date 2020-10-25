@@ -14,16 +14,18 @@ class GameScreen extends StatelessWidget {
   final Board board;
   final int movesMade;
   final Duration timePlaying;
+  final bool refreshBannerAd;
 
   const GameScreen({
     @required this.board,
     @required this.movesMade,
     @required this.timePlaying,
+    @required this.refreshBannerAd,
   });
 
   @override
   Widget build(BuildContext context) {
-    if (Flags.enableBannerAds) {
+    if (Flags.enableBannerAds && this.refreshBannerAd) {
       AdMobFactory.getBannerAd().show();
     }
 

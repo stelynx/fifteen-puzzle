@@ -90,7 +90,10 @@ class GameBloc extends Bloc<GameEvent, GameState> {
       );
     } else if (event is ClockTickedEvent) {
       yield state.copyWith(
-          gameDuration: state.gameDuration + Duration(seconds: 1));
+        gameDuration: state.gameDuration + Duration(seconds: 1),
+        refreshBannerAd:
+            state.gameDuration.inSeconds % Config.refreshBannerAdPeriod == 0,
+      );
 
       if (state.gameDuration.inSeconds == state.maxSeconds) {
         timer.cancel();

@@ -8,6 +8,7 @@ class GameState {
   final GameStatus status;
   final int maxMoves;
   final int maxSeconds;
+  final bool refreshBannerAd;
 
   int get movesMade => moves.length;
 
@@ -18,6 +19,7 @@ class GameState {
     @required this.status,
     @required this.maxMoves,
     @required this.maxSeconds,
+    @required this.refreshBannerAd,
   });
 
   factory GameState.initial() => GameState(
@@ -27,6 +29,7 @@ class GameState {
         gameDuration: Duration(seconds: 0),
         maxMoves: Config.maxMoves,
         maxSeconds: Config.maxTime,
+        refreshBannerAd: true,
       );
 
   GameState copyWith({
@@ -36,6 +39,7 @@ class GameState {
     GameStatus status,
     int maxMoves,
     int maxSeconds,
+    bool refreshBannerAd,
   }) =>
       GameState(
         moves: moves ?? this.moves,
@@ -44,5 +48,6 @@ class GameState {
         status: status ?? this.status,
         maxMoves: maxMoves ?? this.maxMoves,
         maxSeconds: maxSeconds ?? this.maxSeconds,
+        refreshBannerAd: refreshBannerAd ?? false,
       );
 }

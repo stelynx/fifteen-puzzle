@@ -6,7 +6,12 @@ abstract class Config {
   /// bigger by watching videos.
   static const int maxTime = 120;
 
+  /// When rewarded video is watched, give this many additional moves.
   static const int videoExtendsMoves = Config.maxMoves;
 
+  /// When rewarded video is watched, give this many additional seconds.
   static const int videoExtendsTime = Config.maxTime;
+
+  /// When [refreshBannerAdPeriod] passes, the banner on game screen is refreshed.
+  static const int refreshBannerAdPeriod = 15;
 }
