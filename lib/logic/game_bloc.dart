@@ -64,6 +64,7 @@ class GameBloc extends Bloc<GameEvent, GameState> {
         yield state.copyWith(status: GameStatus.win);
       }
     } else if (event is NewGameEvent) {
+      timer?.cancel();
       timer = Timer.periodic(Duration(seconds: 1), _tickClock);
       yield GameState.initial();
     } else if (event is UndoMoveEvent) {
