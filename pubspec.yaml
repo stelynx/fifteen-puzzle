@@ -2,7 +2,7 @@ name: fifteen_puzzle
 description: A 15-Puzzle game implemented in Flutter.
 publish_to: "none"
 
-version: 1.0.1+3
+version: 1.0.2+4
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
