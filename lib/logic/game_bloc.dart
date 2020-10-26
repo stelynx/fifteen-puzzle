@@ -41,12 +41,7 @@ class GameBloc extends Bloc<GameEvent, GameState> {
 
       yield state.copyWith();
 
-      if (state.movesMade == state.maxMoves) {
-        timer.cancel();
-        yield state.copyWith(status: GameStatus.outOfMoves);
-        return;
-      }
-
+      // End the game if complete.
       bool isComplete = true;
       for (int x = 0; x < state.board.length; x++) {
         for (int y = 0; y < state.board.length; y++) {
@@ -58,10 +53,16 @@ class GameBloc extends Bloc<GameEvent, GameState> {
         }
         if (!isComplete) break;
       }
-
       if (isComplete) {
         timer.cancel();
         yield state.copyWith(status: GameStatus.win);
+      }
+
+      // End the game if maximum moves reached.
+      if (state.movesMade == state.maxMoves) {
+        timer.cancel();
+        yield state.copyWith(status: GameStatus.outOfMoves);
+        return;
       }
     } else if (event is NewGameEvent) {
       timer?.cancel();
