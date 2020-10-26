@@ -65,6 +65,9 @@ class GameScreen extends StatelessWidget {
             ),
           ],
         ),
+        if (MediaQuery.of(context).size.height < 1000) ...[
+          SizedBox(height: 20),
+        ],
       ],
     );
   }

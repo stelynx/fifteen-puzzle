@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class _GameLabel extends StatelessWidget {
@@ -23,7 +25,9 @@ class _GameLabel extends StatelessWidget {
             ),
             Text(
               value,
-              style: TextStyle(fontSize: 60, fontWeight: FontWeight.w100),
+              style: TextStyle(
+                  fontSize: min(60, MediaQuery.of(context).size.height / 20),
+                  fontWeight: FontWeight.w100),
             ),
           ],
         ),
