@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +20,7 @@ class GameControllerButton extends StatelessWidget {
       onTap: enabled ? onTap : null,
       child: Icon(
         icon,
-        size: 40.0,
+        size: min(40.0, MediaQuery.of(context).size.height / 25),
         color: enabled ? null : Colors.black26,
       ),
     );
